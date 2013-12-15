@@ -2,7 +2,7 @@ package liveodds
 
 import (
 	"encoding/xml"
-	"fmt"
+	// "fmt"
 	"io/ioutil"
 	"testing"
 	"time"
@@ -194,5 +194,17 @@ func TestSimpleTranslation(t *testing.T) {
 	var xmlTests = []xmlTest{
 		{feed.Status, "translation"},
 		{len(feed.OddsType), 2},
+		{feed.OddsType[0].Type, "3w"},
+		{feed.OddsType[0].TypeID, uint16(2)},
+		{feed.OddsType[0].Name[0].Lang, "en"},
+		{feed.OddsType[0].Name[0].Value, "3way"},
+		{feed.OddsType[0].OddsField[0].Type, "1"},
+		{feed.OddsType[0].OddsField[0].Name[0].Lang, "en"},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(("TestSimpleTranslation: expected %v, got %v"), tt.expected, tt.n)
+		}
 	}
 }

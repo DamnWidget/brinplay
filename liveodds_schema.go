@@ -79,6 +79,7 @@ type OddsType struct {
 	FreeText  string `xml:"freetext,attr,omitempty"`
 	TypeID    uint16 `xml:"typeid,attr"`
 	OddsField []TranslationOddsField
+	Name      []Name
 }
 
 type TranslationOddsField struct {
