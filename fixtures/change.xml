@@ -1,0 +1,27 @@
+<BetradarLiveOdds status="change" timestamp="1383259529944" xmlns="http://www.betradar.com/BetradarLiveOdds">
+    <Match active="1" betstatus="stopped" matchid="867278" msgnr="2" score="-:-" status="not_started">
+        <Odds active="1" changed="false" combination="0" freetext="Next goal" id="78557" specialoddsvalue="0:0" subtype="13" type="ft3w" typeid="6">
+            <OddsField active="1" type="1">1.4</OddsField>
+            <OddsField active="1" type="x">7.0</OddsField>
+            <OddsField active="1" type="2">4.05</OddsField>
+        </Odds>
+        <Odds active="1" changed="false" combination="0" id="78558" specialoddsvalue="2.5" type="to" typeid="5">
+            <OddsField active="1" type="o">2.4</OddsField>
+            <OddsField active="1" type="u">1.45</OddsField>
+        </Odds>
+        <Odds active="1" changed="false" combination="0" freetext="Halftime - Who wins the rest?" id="79538" specialoddsvalue="0:0" subtype="20" type="ft3w" typeid="6">
+            <OddsField active="1" type="1">2.0</OddsField>
+            <OddsField active="1" type="x">2.15</OddsField>
+            <OddsField active="1" type="2">6.75</OddsField>
+        </Odds>
+        <Odds active="1" changed="false" combination="0" freetext="Who wins the rest of the match?" id="78560" specialoddsvalue="0:0" subtype="4" type="ft3w" typeid="6">
+            <OddsField active="1" type="1">1.45</OddsField>
+            <OddsField active="1" type="x">3.65</OddsField>
+            <OddsField active="1" type="2">7.25</OddsField>
+        </Odds>
+        <Odds active="1" changed="true" combination="0" freetext="Which team has kick off?" id="78559" specialoddsvalue="-1" subtype="2" type="ft2w" typeid="7">
+            <OddsField active="1" type="1">1.8</OddsField>
+            <OddsField active="1" type="2">1.8</OddsField>
+        </Odds>
+    </Match>
+</BetradarLiveOdds>

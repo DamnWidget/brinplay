@@ -1,0 +1,26 @@
+<BetradarLiveOdds status="translation" timestamp="1383411024568" xmlns="http://www.betradar.com/BetradarLiveOdds">
+    <OddsType type="3w" typeid="2">
+        <Name lang="en">3way</Name>
+        <OddsField type="1">
+            <Name lang="en">1</Name>
+        </OddsField>
+        <OddsField type="x">
+            <Name lang="en">x</Name>
+        </OddsField>
+        <OddsField type="2">
+            <Name lang="en">2</Name>
+        </OddsField>
+    </OddsType>
+    <OddsType type="hc" typeid="4">
+        <Name lang="en">Handicap</Name>
+        <OddsField type="1">
+            <Name lang="en">1</Name>
+        </OddsField>
+        <OddsField type="x">
+            <Name lang="en">x</Name>
+        </OddsField>
+        <OddsField type="2">
+            <Name lang="en">2</Name>
+        </OddsField>
+    </OddsType>
+</BetradarLiveOdds>
