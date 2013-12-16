@@ -200,6 +200,27 @@ func TestSimpleTranslation(t *testing.T) {
 		{feed.OddsType[0].Name[0].Value, "3way"},
 		{feed.OddsType[0].OddsField[0].Type, "1"},
 		{feed.OddsType[0].OddsField[0].Name[0].Lang, "en"},
+		{feed.OddsType[0].OddsField[0].Name[0].Value, "1"},
+		{feed.OddsType[0].OddsField[1].Type, "x"},
+		{feed.OddsType[0].OddsField[1].Name[0].Lang, "en"},
+		{feed.OddsType[0].OddsField[1].Name[0].Value, "x"},
+		{feed.OddsType[0].OddsField[2].Type, "2"},
+		{feed.OddsType[0].OddsField[2].Name[0].Lang, "en"},
+		{feed.OddsType[0].OddsField[2].Name[0].Value, "2"},
+
+		{feed.OddsType[1].Type, "hc"},
+		{feed.OddsType[1].TypeID, uint16(4)},
+		{feed.OddsType[1].Name[0].Lang, "en"},
+		{feed.OddsType[1].Name[0].Value, "Handicap"},
+		{feed.OddsType[1].OddsField[0].Type, "1"},
+		{feed.OddsType[1].OddsField[0].Name[0].Lang, "en"},
+		{feed.OddsType[1].OddsField[0].Name[0].Value, "1"},
+		{feed.OddsType[1].OddsField[1].Type, "x"},
+		{feed.OddsType[1].OddsField[1].Name[0].Lang, "en"},
+		{feed.OddsType[1].OddsField[1].Name[0].Value, "x"},
+		{feed.OddsType[1].OddsField[2].Type, "2"},
+		{feed.OddsType[1].OddsField[2].Name[0].Lang, "en"},
+		{feed.OddsType[1].OddsField[2].Name[0].Value, "2"},
 	}
 
 	for _, tt := range xmlTests {
