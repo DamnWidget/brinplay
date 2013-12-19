@@ -261,3 +261,33 @@ func TestSimpleScore(t *testing.T) {
 		}
 	}
 }
+
+func TestSimpleCard(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/card.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "score"},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].BetStatus, "stopped"},
+		{feed.Matches[0].MatchID, uint32(1355389)},
+		{feed.Matches[0].Score, "3:0"},
+		{feed.Matches[0].Status, "ended"},
+		{len(feed.Matches[0].Card), 2},
+		{feed.Matches[0].Card[0].CardID, uint32(111556)},
+		{feed.Matches[0].Card[0].Player, "Ramires"},
+		{feed.Matches[0].Card[0].Team, "home"},
+		{feed.Matches[0].Card[0].Time, uint8(70)},
+		{feed.Matches[0].Card[0].Type, "yellow"},
+		{feed.Matches[0].Card[1].CardID, uint32(111555)},
+		{feed.Matches[0].Card[1].Player, "Fuentes, Ismael"},
+		{feed.Matches[0].Card[1].Team, "away"},
+		{feed.Matches[0].Card[1].Time, uint8(67)},
+		{feed.Matches[0].Card[1].Type, "yellow"},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleCard", tt.expected, tt.n)
+		}
+	}
+}

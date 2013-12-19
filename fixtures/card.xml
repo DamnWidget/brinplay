@@ -1,0 +1,6 @@
+<BetradarLiveOdds xmlns="http://www.betradar.com/BetradarLiveOdds" replynr="1" replytype="scoreandcardsummary" status="score" timestamp="1277801191793">
+    <Match active="1" betstatus="stopped" matchid="1355389" score="3:0" status="ended">
+        <Card id="111556" player="Ramires" team="home" time="70" type="yellow"/>
+        <Card id = "111555" player="Fuentes, Ismael" team="away" time="67" type="yellow"/>
+    </Match>
+</BetradarLiveOdds>
