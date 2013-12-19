@@ -8,6 +8,9 @@ import (
 	"time"
 )
 
+// Common message for failed tests
+var failed_msg = "%s: expected %v, got %v"
+
 // We need this to can use whatever result we need
 type CurrentResult interface{}
 type ExpectedResult interface{}
@@ -49,7 +52,7 @@ func TestSimpleAlive(t *testing.T) {
 
 	for _, tt := range xmlTests {
 		if tt.n != tt.expected {
-			t.Errorf("TestSimpleAlive: expected %v, got %v", tt.expected, tt.n)
+			t.Errorf(failed_msg, "TestSimpleAlive", tt.expected, tt.n)
 		}
 	}
 
@@ -184,7 +187,7 @@ func TestSimpleChange(t *testing.T) {
 
 	for _, tt := range xmlTests {
 		if tt.n != tt.expected {
-			t.Errorf("TestSimpleChange: expected %v, got %v", tt.expected, tt.n)
+			t.Errorf(failed_msg, "TestSimpleChange", tt.expected, tt.n)
 		}
 	}
 }
@@ -225,7 +228,36 @@ func TestSimpleTranslation(t *testing.T) {
 
 	for _, tt := range xmlTests {
 		if tt.n != tt.expected {
-			t.Errorf(("TestSimpleTranslation: expected %v, got %v"), tt.expected, tt.n)
+			t.Errorf(failed_msg, "TestSimpleTranslation", tt.expected, tt.n)
+		}
+	}
+}
+
+func TestSimpleScore(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/score.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "score"},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].BetStatus, "stopped"},
+		{feed.Matches[0].MatchTime, uint8(3)},
+		{feed.Matches[0].MsgNR, uint16(10)},
+		{feed.Matches[0].Score, "0:1"},
+		{feed.Matches[0].SetScores, "0:1"},
+		{feed.Matches[0].Status, "1p"},
+		{len(feed.Matches[0].Card), 0},
+		{feed.Matches[0].Scores[0].Away, true},
+		{feed.Matches[0].Scores[0].Home, false},
+		{feed.Matches[0].Scores[0].ScoreID, uint32(66664)},
+		{feed.Matches[0].Scores[0].Player, ""},
+		{feed.Matches[0].Scores[0].ScoringTeam, "away"},
+		{feed.Matches[0].Scores[0].Time, int8(-1)},
+		{feed.Matches[0].Scores[0].Type, "live"},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleScore", tt.expected, tt.n)
 		}
 	}
 }

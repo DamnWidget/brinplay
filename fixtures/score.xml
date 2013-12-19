@@ -1,0 +1,5 @@
+<BetradarLiveOdds status="score" timestamp="1384007541030" xmlns="http://www.betradar.com/BetradarLiveOdds">
+    <Match active="1" betstatus="stopped" matchid="935449" matchtime="3" msgnr="10" score="0:1" setscores="0:1" status="1p">
+        <Score away="1" home="0" id="66664" player="" scoringteam="away" time="-1" type="live"/>
+    </Match>
+</BetradarLiveOdds>

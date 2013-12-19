@@ -52,7 +52,10 @@ type Match struct {
 	GameScore string `xml:"gamescore,attr,omitempty"`
 	Score     string `xml:"score,attr,omitempty"`
 	Status    string `xml:"status,attr"`
+	SetScores string `xml:"setscores,attr,omitempty"`
 	Odds      []Odd
+	Card      []Card
+	Scores    []Score `xml:"Score"`
 }
 
 type Odd struct {
@@ -102,10 +105,11 @@ type Card struct {
 
 type Score struct {
 	ScoreID     uint32 `xml:"id,attr"`
-	Away        uint8  `xml:"away,attr"`
-	Home        uint8  `xml:"home,attr"`
+	Away        bool   `xml:"away,attr"`
+	Home        bool   `xml:"home,attr"`
+	Player      string `xml:"player,attr,omitempty"`
 	ScoringTeam string `xml:"scoringteam,attr"`
-	Time        uint8  `xml:"time,attr"`
+	Time        int8   `xml:"time,attr"`
 	Type        string `xml:"type,attr"`
 }
 
