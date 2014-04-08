@@ -2,14 +2,13 @@ package liveodds
 
 import (
 	"encoding/xml"
-	// "fmt"
 	"io/ioutil"
 	"testing"
 	"time"
 )
 
 // Common message for failed tests
-var failed_msg = "%s: expected %v, got %v"
+const failed_msg = "%s: expected %v, got %v"
 
 // We need this to can use whatever result we need
 type CurrentResult interface{}
@@ -289,5 +288,43 @@ func TestSimpleCard(t *testing.T) {
 		if tt.n != tt.expected {
 			t.Errorf(failed_msg, "TestSimpleCard", tt.expected, tt.n)
 		}
+	}
+}
+
+func TestBookMakerstatus(t *testing.T) {
+	v := &BookMakerStatus{Type: "error", BookmakerID: 1234}
+	v.Timestamp = time.Date(
+		2013, time.December, 15, 17, 56, 30, 0, time.Local).Unix()
+
+	output, err := xml.MarshalIndent(v, " ", "    ")
+	if err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	}
+
+	feed := BookMakerStatus{}
+	unmarshal_err := xml.Unmarshal(output, &feed)
+	if unmarshal_err != nil {
+		panic(unmarshal_err)
+	}
+
+	if feed.Timestamp != v.Timestamp || feed.BookmakerID != v.BookmakerID {
+		t.Errorf("%v and %v are not equal", feed, v)
+	}
+
+	m := Match{Active: true, MatchID: 12345678}
+	v.Match = append(v.Match, m)
+	output, err = xml.MarshalIndent(v, " ", "    ")
+	if err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	}
+
+	feed = BookMakerStatus{}
+	unmarshal_err = xml.Unmarshal(output, &feed)
+	if unmarshal_err != nil {
+		panic(unmarshal_err)
+	}
+
+	if feed.Match[0].MatchID != m.MatchID {
+		t.Error("Matches ID does not match")
 	}
 }

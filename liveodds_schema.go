@@ -45,13 +45,13 @@ func (t *BetRadarLiveOdds) Epoch() (epoch time.Time) {
 
 type Match struct {
 	Active    bool   `xml:"active,attr"`
-	BetStatus string `xml:"betstatus,attr"`
+	BetStatus string `xml:"betstatus,attr,omitempty"`
 	MatchID   uint32 `xml:"matchid,attr"`
-	MatchTime uint8  `xml:"matchtime,attr"`
+	MatchTime uint8  `xml:"matchtime,attr,omitempty"`
 	MsgNR     uint16 `xml:"msgnr,attr,omitempty"`
 	GameScore string `xml:"gamescore,attr,omitempty"`
 	Score     string `xml:"score,attr,omitempty"`
-	Status    string `xml:"status,attr"`
+	Status    string `xml:"status,attr,omitempty"`
 	SetScores string `xml:"setscores,attr,omitempty"`
 	Odds      []Odd
 	Card      []Card
@@ -118,4 +118,5 @@ type BookMakerStatus struct {
 	Timestamp   int64    `xml:"timestamp,attr"`
 	Type        string   `xml:"type,attr"`
 	BookmakerID uint16   `xml:"bookmakerid,attr"`
+	Match       []Match  `xml:"Match,omitempty"`
 }
