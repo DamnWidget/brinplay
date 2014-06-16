@@ -1,0 +1,5 @@
+<BetradarLiveOdds status="cancelbet" timestamp="1199436169018" xmlns="http://www.betradar.com/BetradarLiveOdds">
+    <Match active="1" betstatus="stopped" matchid="661373" matchtime="9" msgnr="46" status="1p">
+        <Odds active="1" combination="0" freetext="Next goal" id="13792" specialoddsvalue="2:0" subtype="13" type="ft3w" typeid="6"/>
+    </Match>
+</BetradarLiveOdds>

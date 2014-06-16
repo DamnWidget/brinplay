@@ -1,0 +1,3 @@
+<ns1:BetradarLiveOdds status="betstop" time="0" timestamp="1383789901283" xmlns:ns1="http://www.betradar.com/BetradarLiveOdds">
+    <ns1:Match active="1" betstatus="stopped" matchid="935449" msgnr="51" score="0:1" setscores="0:1 - 0:0" status="ended"/>
+</ns1:BetradarLiveOdds>

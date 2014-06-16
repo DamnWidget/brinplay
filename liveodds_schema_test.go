@@ -85,15 +85,15 @@ func TestSimpleChange(t *testing.T) {
 		// OddsField[0]
 		{feed.Matches[0].Odds[0].OddsField[0].Active, true},
 		{feed.Matches[0].Odds[0].OddsField[0].Type, "1"},
-		{feed.Matches[0].Odds[0].OddsField[0].Value, float32(1.4)},
+		{feed.Matches[0].Odds[0].OddsField[0].Value, "1.4"},
 		// OddsField[1]
 		{feed.Matches[0].Odds[0].OddsField[1].Active, true},
 		{feed.Matches[0].Odds[0].OddsField[1].Type, "x"},
-		{feed.Matches[0].Odds[0].OddsField[1].Value, float32(7.0)},
+		{feed.Matches[0].Odds[0].OddsField[1].Value, "7.0"},
 		// OddsField[2]
 		{feed.Matches[0].Odds[0].OddsField[2].Active, true},
 		{feed.Matches[0].Odds[0].OddsField[2].Type, "2"},
-		{feed.Matches[0].Odds[0].OddsField[2].Value, float32(4.05)},
+		{feed.Matches[0].Odds[0].OddsField[2].Value, "4.05"},
 
 		// Odds[1]
 		{feed.Matches[0].Odds[1].Active, true},
@@ -109,11 +109,11 @@ func TestSimpleChange(t *testing.T) {
 		// OddsField[0]
 		{feed.Matches[0].Odds[1].OddsField[0].Active, true},
 		{feed.Matches[0].Odds[1].OddsField[0].Type, "o"},
-		{feed.Matches[0].Odds[1].OddsField[0].Value, float32(2.4)},
+		{feed.Matches[0].Odds[1].OddsField[0].Value, "2.4"},
 		// OddsField[1]
 		{feed.Matches[0].Odds[1].OddsField[1].Active, true},
 		{feed.Matches[0].Odds[1].OddsField[1].Type, "u"},
-		{feed.Matches[0].Odds[1].OddsField[1].Value, float32(1.45)},
+		{feed.Matches[0].Odds[1].OddsField[1].Value, "1.45"},
 
 		// Odds[2]
 		{feed.Matches[0].Odds[2].Active, true},
@@ -129,15 +129,15 @@ func TestSimpleChange(t *testing.T) {
 		// OddsField[0]
 		{feed.Matches[0].Odds[2].OddsField[0].Active, true},
 		{feed.Matches[0].Odds[2].OddsField[0].Type, "1"},
-		{feed.Matches[0].Odds[2].OddsField[0].Value, float32(2.0)},
+		{feed.Matches[0].Odds[2].OddsField[0].Value, "2.0"},
 		// OddsField[1]
 		{feed.Matches[0].Odds[2].OddsField[1].Active, true},
 		{feed.Matches[0].Odds[2].OddsField[1].Type, "x"},
-		{feed.Matches[0].Odds[2].OddsField[1].Value, float32(2.15)},
+		{feed.Matches[0].Odds[2].OddsField[1].Value, "2.15"},
 		// OddsField[2]
 		{feed.Matches[0].Odds[2].OddsField[2].Active, true},
 		{feed.Matches[0].Odds[2].OddsField[2].Type, "2"},
-		{feed.Matches[0].Odds[2].OddsField[2].Value, float32(6.75)},
+		{feed.Matches[0].Odds[2].OddsField[2].Value, "6.75"},
 
 		// Odds[3]
 		{feed.Matches[0].Odds[3].Active, true},
@@ -153,15 +153,15 @@ func TestSimpleChange(t *testing.T) {
 		// OddsField[0]
 		{feed.Matches[0].Odds[3].OddsField[0].Active, true},
 		{feed.Matches[0].Odds[3].OddsField[0].Type, "1"},
-		{feed.Matches[0].Odds[3].OddsField[0].Value, float32(1.45)},
+		{feed.Matches[0].Odds[3].OddsField[0].Value, "1.45"},
 		// OddsField[1]
 		{feed.Matches[0].Odds[3].OddsField[1].Active, true},
 		{feed.Matches[0].Odds[3].OddsField[1].Type, "x"},
-		{feed.Matches[0].Odds[3].OddsField[1].Value, float32(3.65)},
+		{feed.Matches[0].Odds[3].OddsField[1].Value, "3.65"},
 		// OddsField[2]
 		{feed.Matches[0].Odds[3].OddsField[2].Active, true},
 		{feed.Matches[0].Odds[3].OddsField[2].Type, "2"},
-		{feed.Matches[0].Odds[3].OddsField[2].Value, float32(7.25)},
+		{feed.Matches[0].Odds[3].OddsField[2].Value, "7.25"},
 
 		// Odds[4]
 		{feed.Matches[0].Odds[4].Active, true},
@@ -177,11 +177,11 @@ func TestSimpleChange(t *testing.T) {
 		// OddsField[0]
 		{feed.Matches[0].Odds[4].OddsField[0].Active, true},
 		{feed.Matches[0].Odds[4].OddsField[0].Type, "1"},
-		{feed.Matches[0].Odds[4].OddsField[0].Value, float32(1.8)},
+		{feed.Matches[0].Odds[4].OddsField[0].Value, "1.8"},
 		// OddsField[1]
 		{feed.Matches[0].Odds[4].OddsField[1].Active, true},
 		{feed.Matches[0].Odds[4].OddsField[1].Type, "2"},
-		{feed.Matches[0].Odds[4].OddsField[1].Value, float32(1.8)},
+		{feed.Matches[0].Odds[4].OddsField[1].Value, "1.8"},
 	}
 
 	for _, tt := range xmlTests {
@@ -287,6 +287,230 @@ func TestSimpleCard(t *testing.T) {
 	for _, tt := range xmlTests {
 		if tt.n != tt.expected {
 			t.Errorf(failed_msg, "TestSimpleCard", tt.expected, tt.n)
+		}
+	}
+}
+
+func TestSimpleBetStart(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/betstart.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "betstart"},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].BetStatus, "started"},
+		{feed.Matches[0].MatchID, uint32(935449)},
+		{feed.Matches[0].MsgNR, uint16(2)},
+		{feed.Matches[0].Score, ":"},
+		{feed.Matches[0].Status, "not_started"},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleBetStart", tt.expected, tt.n)
+		}
+	}
+}
+
+func TestSimpleBetStop(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/betstop.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "betstop"},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].BetStatus, "stopped"},
+		{feed.Matches[0].MatchID, uint32(935449)},
+		{feed.Matches[0].MsgNR, uint16(51)},
+		{feed.Matches[0].Score, "0:1"},
+		{feed.Matches[0].SetScores, "0:1 - 0:0"},
+		{feed.Matches[0].Status, "ended"},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleBetStop", tt.expected, tt.n)
+		}
+	}
+}
+
+func TestSimpleCancelBet(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/cancelbet.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "cancelbet"},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].BetStatus, "stopped"},
+		{feed.Matches[0].MatchID, uint32(661373)},
+		{feed.Matches[0].MatchTime, uint8(9)},
+		{feed.Matches[0].MsgNR, uint16(46)},
+		{feed.Matches[0].Status, "1p"},
+		{len(feed.Matches[0].Odds), 1},
+		{feed.Matches[0].Odds[0].Active, true},
+		{feed.Matches[0].Odds[0].Combination, uint8(0)},
+		{feed.Matches[0].Odds[0].FreeText, "Next goal"},
+		{feed.Matches[0].Odds[0].OddsID, uint32(13792)},
+		{feed.Matches[0].Odds[0].SpecialOddsValue, "2:0"},
+		{feed.Matches[0].Odds[0].SubType, uint16(13)},
+		{feed.Matches[0].Odds[0].Type, "ft3w"},
+		{feed.Matches[0].Odds[0].TypeID, uint16(6)},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleCancelBet", tt.expected, tt.n)
+		}
+	}
+}
+
+func TestSimpleCancelBetWithPeriod(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/cancelbet_with_period.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "cancelbet"},
+		{feed.StartTime, int64(1199435902000)},
+		{feed.EndTime, int64(1199436022222)},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].BetStatus, "stopped"},
+		{feed.Matches[0].MatchID, uint32(661373)},
+		{feed.Matches[0].MatchTime, uint8(9)},
+		{feed.Matches[0].MsgNR, uint16(46)},
+		{feed.Matches[0].Status, "1p"},
+		{len(feed.Matches[0].Odds), 1},
+		{feed.Matches[0].Odds[0].Active, true},
+		{feed.Matches[0].Odds[0].Combination, uint8(0)},
+		{feed.Matches[0].Odds[0].FreeText, "Next goal"},
+		{feed.Matches[0].Odds[0].OddsID, uint32(13792)},
+		{feed.Matches[0].Odds[0].SpecialOddsValue, "2:0"},
+		{feed.Matches[0].Odds[0].SubType, uint16(13)},
+		{feed.Matches[0].Odds[0].Type, "ft3w"},
+		{feed.Matches[0].Odds[0].TypeID, uint16(6)},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleCancelBetWithPeriod", tt.expected, tt.n)
+		}
+	}
+}
+
+func TestSimpleUndoCancelBet(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/undocancelbet.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "undocancelbet"},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].BetStatus, "stopped"},
+		{feed.Matches[0].MatchID, uint32(661373)},
+		{feed.Matches[0].MsgNR, uint16(49)},
+		{feed.Matches[0].Status, "not_started"},
+		{len(feed.Matches[0].Odds), 1},
+		{feed.Matches[0].Odds[0].Active, true},
+		{feed.Matches[0].Odds[0].Combination, uint8(0)},
+		{feed.Matches[0].Odds[0].FreeText, "Next goal"},
+		{feed.Matches[0].Odds[0].OddsID, uint32(13792)},
+		{feed.Matches[0].Odds[0].SpecialOddsValue, "0:0"},
+		{feed.Matches[0].Odds[0].SubType, uint16(13)},
+		{feed.Matches[0].Odds[0].Type, "ft3w"},
+		{feed.Matches[0].Odds[0].TypeID, uint16(6)},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleUndoCancelBet", tt.expected, tt.n)
+		}
+	}
+}
+
+func TestSimpleRolback(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/rollback.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "rollback"},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].BetStatus, "stopped"},
+		{feed.Matches[0].MatchID, uint32(793862)},
+		{feed.Matches[0].MatchTime, uint8(1)},
+		{feed.Matches[0].MsgNR, uint16(10)},
+		{feed.Matches[0].Status, "1p"},
+		{len(feed.Matches[0].Odds), 1},
+		{feed.Matches[0].Odds[0].Active, true},
+		{feed.Matches[0].Odds[0].Combination, uint8(0)},
+		{feed.Matches[0].Odds[0].FreeText, "Which team has kick off?"},
+		{feed.Matches[0].Odds[0].OddsID, uint32(78655)},
+		{feed.Matches[0].Odds[0].SubType, uint16(2)},
+		{feed.Matches[0].Odds[0].Type, "ft2w"},
+		{feed.Matches[0].Odds[0].TypeID, uint16(7)},
+		{len(feed.Matches[0].Odds[0].OddsField), 2},
+		{feed.Matches[0].Odds[0].OddsField[0].Active, true},
+		{feed.Matches[0].Odds[0].OddsField[0].Outcome, false},
+		{feed.Matches[0].Odds[0].OddsField[0].Type, "1"},
+		{feed.Matches[0].Odds[0].OddsField[1].Active, true},
+		{feed.Matches[0].Odds[0].OddsField[1].Outcome, true},
+		{feed.Matches[0].Odds[0].OddsField[1].Type, "2"},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleRollback", tt.expected, tt.n)
+		}
+	}
+}
+
+func TestSimpleClearBet(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/clearbet.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "clearbet"},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].BetStatus, "stopped"},
+		{feed.Matches[0].ClearedScore, "0:0"},
+		{feed.Matches[0].MatchID, uint32(793862)},
+		{feed.Matches[0].MatchTime, uint8(1)},
+		{feed.Matches[0].MsgNR, uint16(8)},
+		{feed.Matches[0].Status, "1p"},
+		{len(feed.Matches[0].Odds), 1},
+		{feed.Matches[0].Odds[0].Active, true},
+		{feed.Matches[0].Odds[0].Combination, uint8(0)},
+		{feed.Matches[0].Odds[0].FreeText, "Which team has kick off?"},
+		{feed.Matches[0].Odds[0].OddsID, uint32(78655)},
+		{feed.Matches[0].Odds[0].SubType, uint16(2)},
+		{feed.Matches[0].Odds[0].Type, "ft2w"},
+		{feed.Matches[0].Odds[0].TypeID, uint16(7)},
+		{len(feed.Matches[0].Odds[0].OddsField), 2},
+		{feed.Matches[0].Odds[0].OddsField[0].Active, true},
+		{feed.Matches[0].Odds[0].OddsField[0].Outcome, false},
+		{feed.Matches[0].Odds[0].OddsField[0].Type, "1"},
+		{feed.Matches[0].Odds[0].OddsField[1].Active, true},
+		{feed.Matches[0].Odds[0].OddsField[1].Outcome, true},
+		{feed.Matches[0].Odds[0].OddsField[1].Type, "2"},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleRollback", tt.expected, tt.n)
+		}
+	}
+}
+
+func TestSimpleRegisterReply(t *testing.T) {
+	feed := LoadXMLFixture("fixtures/registerreply.xml")
+	var xmlTests = []xmlTest{
+		{feed.Status, "meta"},
+		{feed.ReplyType, "register"},
+		{len(feed.Matches), 1},
+		{feed.Matches[0].Active, true},
+		{feed.Matches[0].MatchID, uint32(935448)},
+		{feed.Matches[0].Status, "1p"},
+		{feed.Matches[0].MatchInfo.DateOfMatch, int64(1275051158000)},
+		{feed.Matches[0].MatchInfo.Sport.Id, uint8(1)},
+		{feed.Matches[0].MatchInfo.Category.Id, uint16(94)},
+		{feed.Matches[0].MatchInfo.Tournament.Id, uint32(5956)},
+		{feed.Matches[0].MatchInfo.HomeTeam.Id, uint32(773839)},
+		{feed.Matches[0].MatchInfo.AwayTeam.Id, uint32(1013871)},
+	}
+
+	for _, tt := range xmlTests {
+		if tt.n != tt.expected {
+			t.Errorf(failed_msg, "TestSimpleRegisterReply", tt.expected, tt.n)
 		}
 	}
 }

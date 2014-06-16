@@ -32,6 +32,9 @@ type BetRadarLiveOdds struct {
 	XMLName   xml.Name `xml:"BetradarLiveOdds"`
 	Status    string   `xml:"status,attr"`
 	Timestamp int64    `xml:"timestamp,attr"`
+	StartTime int64    `xml:"starttime,attr,omitempty"`
+	EndTime   int64    `xml:"endtime,attr,omitempty"`
+	ReplyType string   `xml:"replytype,attr,omitempty"`
 	XMLNS     string   `xml:"xmlns,attr"`
 	Matches   []Match  `xml:"Match"`
 	OddsType  []OddsType
@@ -44,18 +47,54 @@ func (t *BetRadarLiveOdds) Epoch() (epoch time.Time) {
 }
 
 type Match struct {
-	Active    bool   `xml:"active,attr"`
-	BetStatus string `xml:"betstatus,attr,omitempty"`
-	MatchID   uint32 `xml:"matchid,attr"`
-	MatchTime uint8  `xml:"matchtime,attr,omitempty"`
-	MsgNR     uint16 `xml:"msgnr,attr,omitempty"`
-	GameScore string `xml:"gamescore,attr,omitempty"`
-	Score     string `xml:"score,attr,omitempty"`
-	Status    string `xml:"status,attr,omitempty"`
-	SetScores string `xml:"setscores,attr,omitempty"`
-	Odds      []Odd
-	Card      []Card
-	Scores    []Score `xml:"Score"`
+	Active       bool   `xml:"active,attr"`
+	BetStatus    string `xml:"betstatus,attr,omitempty"`
+	MatchID      uint32 `xml:"matchid,attr"`
+	MatchTime    uint8  `xml:"matchtime,attr,omitempty"`
+	MsgNR        uint16 `xml:"msgnr,attr,omitempty"`
+	GameScore    string `xml:"gamescore,attr,omitempty"`
+	ClearedScore string `xml:"clearedscore,attr,omitempty"`
+	Score        string `xml:"score,attr,omitempty"`
+	Status       string `xml:"status,attr,omitempty"`
+	SetScores    string `xml:"setscores,attr,omitempty"`
+	Odds         []Odd
+	Card         []Card
+	Scores       []Score   `xml:"Score"`
+	MatchInfo    MatchInfo `xml:"MatchInfo"`
+}
+
+type MatchInfo struct {
+	DateOfMatch int64      `xml:"DateOfMatch"`
+	Sport       Sport      `xml:"Sport"`
+	Category    Category   `xml:"Category"`
+	Tournament  Tournament `xml:"Tournament"`
+	HomeTeam    HomeTeam   `xml:"HomeTeam"`
+	AwayTeam    AwayTeam   `xml:"AwayTeam"`
+}
+
+type Sport struct {
+	Value string `xml:",chardata"`
+	Id    uint8  `xml:"id,attr"`
+}
+
+type Category struct {
+	Value string `xml:",chardata"`
+	Id    uint16 `xml:"id,attr"`
+}
+
+type Tournament struct {
+	Value string `xml:",chardata"`
+	Id    uint32 `xml:"id,attr"`
+}
+
+type HomeTeam struct {
+	Value string `xml:",chardata"`
+	Id    uint32 `xml:"id,attr"`
+}
+
+type AwayTeam struct {
+	Value string `xml:",chardata"`
+	Id    uint32 `xml:"id,attr"`
 }
 
 type Odd struct {
@@ -72,9 +111,10 @@ type Odd struct {
 }
 
 type OddsField struct {
-	Value  float32 `xml:",chardata"`
-	Active bool    `xml:"active,attr,omitempty"`
-	Type   string  `xml:"type,attr"`
+	Value   string `xml:",chardata"` // has to be string cos sometimes is empty (rollback packet for example)
+	Active  bool   `xml:"active,attr,omitempty"`
+	Outcome bool   `xml:"outcome,attr,omitempty"`
+	Type    string `xml:"type,attr"`
 }
 
 type OddsType struct {

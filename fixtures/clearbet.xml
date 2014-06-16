@@ -1,0 +1,8 @@
+<ns1:BetradarLiveOdds status="clearbet" time="0" timestamp="1383326418782" xmlns:ns1="http://www.betradar.com/BetradarLiveOdds">
+    <ns1:Match active="1" betstatus="stopped" clearedscore="0:0" matchid="793862" matchtime="1" msgnr="8" status="1p">
+        <ns1:Odds active="1" combination="0" freetext="Which team has kick off?" id="78655" subtype="2" type="ft2w" typeid="7">
+            <ns1:OddsField active="1" outcome="0" type="1"/>
+            <ns1:OddsField active="1" outcome="1" type="2"/>
+        </ns1:Odds>
+    </ns1:Match>
+</ns1:BetradarLiveOdds>

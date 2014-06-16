@@ -1,0 +1,13 @@
+<BetradarLiveOdds status="meta" timestamp="1275050982039" xmlns="http://www.betradar.com/BetradarLiveOdds" replytype="register">
+    <Match active="1" matchid="935448" status="1p">
+        <MatchInfo>
+            <DateOfMatch>1275051158000</DateOfMatch>
+            <Sport id="1">Soccer</Sport>
+            <Category id="94">Norway Amateur</Category>
+            <Tournament id="5956">4 Division, Trondelag avd 04</Tournament>
+            <HomeTeam id="773839">TVEDESTRAND</HomeTeam>
+            <AwayTeam id="1013871">NAMDALSEID</AwayTeam>
+            <TvChannels/>
+        </MatchInfo>
+    </Match>
+</BetradarLiveOdds>
